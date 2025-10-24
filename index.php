@@ -1,4 +1,11 @@
-<?php includ 'inc/inc.functions.php'; ?>
+<?php
+// Inclusion du fichier contenant les fonctions principales du site
+include 'inc/inc.functions.php';
+$filePath = 'inc/inc.functions.php';
+
+// Log et affichage pour vérifier le chemin du fichier
+error_log("Chargement du fichier de fonctions : $filePath");
+var_dump($filePath); ?>
 <!DOCTYPE HTML>
 <!--
 	Story by HTML5 UP
@@ -10,21 +17,29 @@
 		<title>Story by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<?php include 'inc/inc.css.php'; ?>
+		<?php
+		// Inclusion des fichiers CSS globaux du site
+		error_log("Inclusion du fichier CSS : inc/inc.css.php");
+		include 'inc/inc.css.php'; ?>
 	</head>
 	<body class="is-preload">
 
 		<!-- Wrapper -->
 			<div id="wrapper" class="divided">
 				<?php 
-					getPagesTemplate(
-						array_key_exist('page', $_GET) ? $_GET['page'] : null
+				// Appel de la fonction qui charge la page demandée dynamiquement.
+					getPageTemplate(
+						array_key_exists('page', $_GET) ? $_GET['page'] : null
 					); 
 				?>
-				<?php include 'inc/tpls-footer.php'; ?>
+				<?php
+				// Inclusion du pied de page (footer)
+				include 'inc/tpl-footer.php'; ?>
 			</div>
 
-		<?php includes 'inc/inc.js.php'; ?>
+		<?php 
+		// Inclusion des scripts JavaScript globaux
+		include 'inc/inc.js.php'; ?>
 
 	</body>
 </html>
