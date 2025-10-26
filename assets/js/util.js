@@ -6,11 +6,11 @@
 	 */
 	$.fn.navList = function() {
 
-		var	$this = $(this);
-			$a = $this.find('a'),
-			b = [];
+        var	$this = $(this),
+            $a = $this.find('a'),
+            b = [];
 
-		$a.each(function() {
+        $a.each(function() {
 
 			var	$this = $(this),
 				indent = Math.max(0, $this.parents('li').length - 1),
@@ -41,26 +41,26 @@
 	 */
 	$.fn.panel = function(userConfig) {
 
-		// No elements?
-			if (this.length == 0)
-				return $this;
+        // No elements?
+            if (this.length == 0)
+                return $(this);
 
-		// Multiple elements?
-			if (this.length > 1) {
+        // Multiple elements?
+            if (this.length > 1) {
 
-				for (var i=0; i < this.length; i++)
-					$(this[i]).panel(userConfig);
+                for (var i=0; i < this.length; i++)
+                    $(this[i]).panel(userConfig);
 
-				return $this;
+                return $(this);
 
-			}
+            }
 
-		// Vars.
-			var	$this = $(this),
-				$body = $('body'),
-				$window = $(window),
-				id = $this.attr('id'),
-				config;
+        // Vars.
+            var	$this = $(this),
+                $body = $('body'),
+                $window = $(window),
+                id = $this.attr('id'),
+                config;
 
 		// Config.
 			config = $.extend({
@@ -302,26 +302,26 @@
 	 */
 	$.fn.placeholder = function() {
 
-		// Browser natively supports placeholders? Bail.
-			if (typeof (document.createElement('input')).placeholder != 'undefined')
-				return $(this);
+        // Browser natively supports placeholders? Bail.
+            if (typeof (document.createElement('input')).placeholder != 'undefined')
+                return $(this);
 
-		// No elements?
-			if (this.length == 0)
-				return $this;
+        // No elements?
+            if (this.length == 0)
+                return $(this);
 
-		// Multiple elements?
-			if (this.length > 1) {
+        // Multiple elements?
+            if (this.length > 1) {
 
-				for (var i=0; i < this.length; i++)
-					$(this[i]).placeholder();
+                for (var i=0; i < this.length; i++)
+                    $(this[i]).placeholder();
 
-				return $this;
+                return $(this);
 
-			}
+            }
 
-		// Vars.
-			var $this = $(this);
+        // Vars.
+            var $this = $(this);
 
 		// Text, TextArea.
 			$this.find('input[type=text],textarea')
@@ -444,7 +444,7 @@
 
 							if (i.val() == i.attr('placeholder')) {
 
-								i.removeClass('polyfill-placeholder');
+							 i.removeClass('polyfill-placeholder');
 								i.val('');
 
 							}

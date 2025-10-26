@@ -2,11 +2,7 @@
 // Inclusion du fichier contenant les fonctions principales du site
 include 'inc/inc.functions.php';
 $filePath = 'inc/inc.functions.php';
-
-// Log et affichage pour vérifier le chemin du fichier
-error_log("Chargement du fichier de fonctions : $filePath");
-var_dump($filePath); ?>
-<!DOCTYPE HTML>
+?>
 <!--
 	Story by HTML5 UP
 	html5up.net | @ajlkn
